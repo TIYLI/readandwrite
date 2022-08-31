@@ -25,7 +25,17 @@ namespace sus
 	}
 
 
-	
+	void ReadFromFile()
+	{
+		std::string fileContent;
+		std::ifstream openFile("minfil.txt");
+		while (std::getline(openFile, fileContent))
+		{
+			std::cout << "Yttligare info: " << fileContent << "\n";
+
+		}
+		openFile.close();
+	}
 }
 
 
@@ -34,4 +44,5 @@ int main()
 {
 	sus::Print(123);
 	sus::WriteToFile("minfil.txt");
+	sus::ReadFromFile();
 }
