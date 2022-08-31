@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+
 
 namespace sus
 {
@@ -10,7 +13,17 @@ namespace sus
 
 	}
 
+	void WriteToFile(std::string filePath)
+	{
+		std::ofstream file(filePath);
+		std::string fileContent;
+		std::getline(std::cin, fileContent);
+		file << fileContent;
+		file.close();
+	}
 
+
+	
 }
 
 
@@ -18,4 +31,5 @@ namespace sus
 int main()
 {
 	sus::Print(123);
+	sus::WriteToFile("minfil.txt");
 }
